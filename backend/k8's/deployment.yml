@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learnerreportbackend-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: learnerreportbackend
+  template:
+    metadata:
+      labels:
+        app: learnerreportbackend
+    spec:
+      containers:
+      - name: learnerreportbackend
+        image: subhra11/learnerreportbackend:v11
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000

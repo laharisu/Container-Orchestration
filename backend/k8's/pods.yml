@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: learnerreportbackend-pod
+  labels:
+    name: learnerreportbackend
+spec:
+  containers:
+  - name: learnerreportbackend
+    image: subhra11/learnerreportbackend:v11
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 5000
